@@ -1,0 +1,26 @@
+package main
+
+import (
+	"fmt"
+)
+
+func rotateLeft(s string, k int) string {
+	n := len(s)
+	k = k % n
+	result := ""
+	for i := 0; i < n; i++ {
+		result += string(s[(i+k)%n])
+	}
+	return result
+}
+
+func main() {
+	var s string
+	var k int
+	fmt.Print("Enter the string: ")
+	fmt.Scan(&s)
+	fmt.Print("Enter the number of positions to rotate: ")
+	fmt.Scan(&k)
+	
+	fmt.Println("Rotated String:", rotateLeft(s, k))
+}
